@@ -1,0 +1,25 @@
+package Calculadora;
+
+import java.util.Scanner;
+
+public class Calculadora {
+	public static void main (String[] args) {
+		Scanner entrada = new Scanner (System.in);
+		int num1;
+		int num2;
+	
+		System.out.println("Bem vindo à calculadora do Curso de Java");
+		System.out.println("_________________________________________");
+		
+		System.out.println("Digite o númerador: ");
+		num1=entrada.nextInt();
+		System.out.println("Digite o denominador: ");
+		num2=entrada.nextInt();
+		
+		double result = num1/num2;
+		
+		System.out.println("O resultado da divisão entre  " +num1 + " e " +num2 + " é =  " + result);
+		
+		
+		entrada.close();
+	}
