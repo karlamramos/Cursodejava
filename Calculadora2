@@ -1,0 +1,51 @@
+package Calculadora;
+
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+
+public class Calculadora {
+	public static void main (String[] args) {
+		Scanner entrada = new Scanner (System.in);
+		double num1;
+		double num2;
+		String resposta = "SIM";
+	
+		System.out.println("Bem vindo à calculadora do Curso de Java");
+		System.out.println("_________________________________________");
+		
+		do {
+			try {
+		System.out.println("Digite o númerador: ");
+		num1=entrada.nextDouble();
+		System.out.println("Digite o denominador: ");
+		num2=entrada.nextDouble();
+		if(num2 == 0.0) {
+			throw new Exception("Divisão por zero!");
+		}
+		
+		
+		} catch(InputMismatchException e) {
+			e.getMessage();
+			System.out.println("Entrada inválida! Digite um valor numérico !!");
+			entrada.nextLine();
+			continue;
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+			System.out.println("Escolha um número diferente de zero!");
+			e.getMessage();
+			continue;
+		}
+			double result = num1/num2;
+		
+		System.out.println("O resultado da divisão entre  " +num1 + " e " +num2 + " é =  " + result);
+		System.out.println("Deseja realizar uma nova operação?");
+		resposta = entrada.next();
+	} while(resposta.equalsIgnoreCase("SIM"));
+		
+		System.out.println("Fim do Programa !");
+		
+	entrada.close();
+	}
+
+}
